@@ -1,6 +1,6 @@
 {
   "*.{ts, tsx}": [
-    "tsc -p tsconfig.json --noEmit",
+    "tsc --noEmit",
     "eslint --fix",
     "prettier --write"
   ]
