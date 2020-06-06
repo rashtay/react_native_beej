@@ -9,4 +9,12 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  parserOptions: {
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true,
+      jsx: true,
+    },
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+  },
 };
