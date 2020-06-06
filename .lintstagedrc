@@ -1,7 +1,7 @@
 {
   "*.{ts, tsx}": [
-    "tsc --noEmit",
-    "eslint --fix",
-    "prettier --write"
+    "prettier --parser typescript --write",
+    "bash -c tsc",
+    "eslint --fix"
   ]
 }

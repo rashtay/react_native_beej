@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
 const App = () => {
   return (
     <>
-      <StatusBar barStylesss="dark-content" />
+      <StatusBar barStyless="dark-content" />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
