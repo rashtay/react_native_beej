@@ -11,7 +11,7 @@
  */
 
 import React from 'react';
-import { StatusBar, SafeAreaView } from 'react-native';
+import { StatusBar } from 'react-native';
 import { StoreProvider } from 'easy-peasy';
 import Routes from 'routes';
 import store from './store';
@@ -21,11 +21,9 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
 
-      <SafeAreaView>
-        <StoreProvider store={store}>
-          <Routes />
-        </StoreProvider>
-      </SafeAreaView>
+      <StoreProvider store={store}>
+        <Routes />
+      </StoreProvider>
     </>
   );
 };
