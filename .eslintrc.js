@@ -32,5 +32,6 @@ module.exports = {
     'prefer-const': 2,
 
     quotes: ['error', 'single', 'avoid-escape'],
+    'import/prefer-default-export': 0,
   },
 };

@@ -1,0 +1,1 @@
+/* This file is to declare third packages incompatible with typescript */

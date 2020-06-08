@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "easy-peasy": "^3.3.0",
     "react": "16.11.0",
     "react-native": "0.62.2"
   },
