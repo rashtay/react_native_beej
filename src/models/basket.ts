@@ -1,6 +1,4 @@
 /**
- * Author: Rahul Shetty
- *
  * Sample basket (cart) model for the dummy app
  */
 // https://easy-peasy.now.sh/docs/tutorial/using-computed-properties.html

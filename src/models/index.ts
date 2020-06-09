@@ -1,6 +1,4 @@
 /**
- * Author: Rahul Shetty
- *
  * Compose our models into a single store model.
  */
 import { productsModel, ProductsModel } from './products';

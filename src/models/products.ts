@@ -1,6 +1,4 @@
 /**
- * Author: Rahul Shetty
- *
  * Sample product model for the dummy app
  */
 import { computed, Computed } from 'easy-peasy';
