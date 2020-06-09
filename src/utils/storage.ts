@@ -6,7 +6,7 @@ const storage = {
 
     return result ? JSON.parse(result) : null;
   },
-  async setItem(key: string, data: object) {
+  async setItem(key: string, data: any) {
     AsyncStorage.setItem(key, JSON.stringify(data));
   },
   async removeItem(key: string) {
