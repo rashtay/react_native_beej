@@ -34,7 +34,8 @@ const store = createStore(
 if (__DEV__) {
   // @types/webpack-env
   if (module.hot) {
-    module.hot.accept('../models/', () => {
+    // At times the app breaks. Just reload and start again
+    module.hot.accept('../models', () => {
       store.reconfigure(storeModel); // 👈 Here is the magic
     });
   }
