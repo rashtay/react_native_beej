@@ -15,9 +15,10 @@ let storeEnhancers: any[] = [];
 if (__DEV__) {
   // eslint-disable-next-line global-require
   const reactotron = require('./reactotron.config').default;
+  // @types/ws
   const reactotronConfig = reactotron();
 
-  // Global variable. Use it to log your variable and you can see the result in reactotron
+  // Global variable. Use it to log your variable and you can see the result in reactotrons
   tronlog = reactotronConfig.log;
   storeEnhancers = [...storeEnhancers, reactotronConfig.createEnhancer()];
 }
@@ -29,5 +30,14 @@ const store = createStore(
     enhancers: [...storeEnhancers],
   },
 ); // 👈 create our store
+
+if (__DEV__) {
+  // @types/webpack-env
+  if (module.hot) {
+    module.hot.accept('../models/', () => {
+      store.reconfigure(storeModel); // 👈 Here is the magic
+    });
+  }
+}
 
 export default store;
