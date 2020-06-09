@@ -1,9 +1,11 @@
 import React, { useCallback, useState } from 'react';
-import { View, Text } from 'react-native';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import { NavProps, RouteNames } from '@routes/names';
+import Product from '@components/Product';
 
-export default function Product({ route }: NavProps[RouteNames.Product]) {
+export default function ProductContainer({
+  route,
+}: NavProps[RouteNames.Product]) {
   const { id } = route.params;
   const chosenProduct: any = useStoreState((state) =>
     state.products.getById(id),
@@ -26,13 +28,10 @@ export default function Product({ route }: NavProps[RouteNames.Product]) {
   }, [chosenProduct, addProductToBasket]);
 
   return (
-    <View>
-      <Text>{chosenProduct.name}</Text>
-      <Text>£ {chosenProduct.price}</Text>
-
-      <Text onPress={onAddToBasketClick}>
-        {adding ? 'Adding...' : 'Add to basket'}
-      </Text>
-    </View>
+    <Product
+      product={chosenProduct}
+      onAdd={onAddToBasketClick}
+      loading={adding}
+    />
   );
 }

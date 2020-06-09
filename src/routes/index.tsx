@@ -8,7 +8,7 @@ import ProductList from '@containers/ProductList';
 import Product from '@containers/Product';
 import Basket from '@containers/Basket';
 import BasketCount from '@containers/BasketCount';
-import AuditLog from '@components/AuditLog';
+import AuditLog from '@containers/AuditLog';
 import { RouteNames } from './names';
 
 type DefaultNav = {

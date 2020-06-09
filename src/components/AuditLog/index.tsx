@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { useStoreState } from 'easy-peasy';
 
-export default function AuditLog() {
-  const logs = useStoreState((state) => state.audit.logs);
+interface Props {
+  logs: string[];
+}
 
+export default function AuditLog({ logs }: Props) {
   return (
     <View>
       <Text>{logs.join('\n')}</Text>
