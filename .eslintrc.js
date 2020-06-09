@@ -18,6 +18,15 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: '*', next: 'break' },
+      { blankLine: 'always', prev: '*', next: 'continue' },
+      { blankLine: 'always', prev: '*', next: 'function' },
+      { blankLine: 'always', prev: '*', next: 'block' },
+    ],
+
     'no-await-in-loop': 2,
     'lines-around-comment': [
       2,
