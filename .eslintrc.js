@@ -42,5 +42,6 @@ module.exports = {
 
     quotes: ['error', 'single', 'avoid-escape'],
     'import/prefer-default-export': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };

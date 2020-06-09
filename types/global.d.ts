@@ -1,3 +1,5 @@
+declare let tronlog: Function;
+
 type ContainerProps = {
   navigation: any;
   route: any;
