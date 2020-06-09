@@ -13,8 +13,12 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { StoreProvider } from 'easy-peasy';
+import { enableScreens } from 'react-native-screens';
 import AppNavigation from 'routes';
 import store from './store';
+
+// Improves the performance of react-navigation
+enableScreens();
 
 const App = () => {
   return (

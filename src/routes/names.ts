@@ -11,7 +11,6 @@ type RootStackParamList = {
   [RouteNames.ProductList]: undefined;
   [RouteNames.Product]: { id: number };
   [RouteNames.Basket]: undefined;
-  [RouteNames.BasketCount]: undefined;
 };
 
 export type NavProps = {
@@ -26,6 +25,6 @@ export type NavProps = {
   [RouteNames.Basket]: StackScreenProps<RootStackParamList, RouteNames.Basket>;
   [RouteNames.BasketCount]: StackScreenProps<
     RootStackParamList,
-    RouteNames.BasketCount
+    RouteNames.Basket
   >;
 };

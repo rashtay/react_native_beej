@@ -11,7 +11,7 @@ export default function BasketCountContainer({
   return (
     <BasketCount
       count={count}
-      onLinkPress={() => navigation.navigate(RouteNames.BasketCount)}
+      onLinkPress={() => navigation.navigate(RouteNames.Basket)}
     />
   );
 }
