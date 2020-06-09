@@ -19,7 +19,7 @@ if (__DEV__) {
   const reactotronConfig = reactotron();
 
   // Global variable. Use it to log your variable and you can see the result in reactotrons
-  tronlog = reactotronConfig.log;
+  (global as any).tronlog = reactotronConfig.log;
   storeEnhancers = [...storeEnhancers, reactotronConfig.createEnhancer()];
 }
 

@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { View, Text } from 'react-native';
 import { useStoreState, useStoreActions } from 'easy-peasy';
+import { NavProps, RouteNames } from '@routes/names';
 
-export default function Product({ route }: ContainerProps) {
+export default function Product({ route }: NavProps[RouteNames.Product]) {
   const { id } = route.params;
   const chosenProduct: any = useStoreState((state) =>
     state.products.getById(id),

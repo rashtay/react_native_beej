@@ -13,7 +13,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { StoreProvider } from 'easy-peasy';
-import Routes from 'routes';
+import AppNavigation from 'routes';
 import store from './store';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       <StatusBar barStyle="dark-content" />
 
       <StoreProvider store={store}>
-        <Routes />
+        <AppNavigation />
       </StoreProvider>
     </>
   );

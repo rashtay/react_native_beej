@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { useStoreActions, useStoreState } from 'easy-peasy';
+import { NavProps, RouteNames } from '@routes/names';
 
-export default function Basket({ navigation }: ContainerProps) {
+export default function Basket({ navigation }: NavProps[RouteNames.Basket]) {
   const basketProducts = useStoreState((state) => state.basket.products);
 
   //  map our action 👇
@@ -21,7 +22,7 @@ export default function Basket({ navigation }: ContainerProps) {
             <View key={key}>
               <Text
                 onPress={() =>
-                  navigation.navigate('Product', {
+                  navigation.navigate(RouteNames.Product, {
                     id: product.id,
                   })
                 }

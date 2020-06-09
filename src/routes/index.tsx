@@ -9,12 +9,18 @@ import Product from '@containers/Product';
 import Basket from '@containers/Basket';
 import BasketCount from '@containers/BasketCount';
 import AuditLog from '@components/AuditLog';
+import { RouteNames } from './names';
+
+type DefaultNav = {
+  navigation: any;
+  route: any;
+};
 
 const PERSISTENCE_KEY = 'NAVIGATION_STATE';
 
 const Stack = createStackNavigator();
 
-const screenOptions = ({ navigation, route }: ContainerProps) => ({
+const screenOptions = ({ navigation, route }: DefaultNav) => ({
   headerStyle: {
     backgroundColor: '#f4511e',
   },
@@ -22,7 +28,7 @@ const screenOptions = ({ navigation, route }: ContainerProps) => ({
   headerRight: () => <BasketCount navigation={navigation} route={route} />,
 });
 
-const Routes = () => {
+const AppNavigation = () => {
   const [isReady, setIsReady] = React.useState(false);
   const [initialState, setInitialState] = React.useState();
 
@@ -50,7 +56,6 @@ const Routes = () => {
 
   const onStateChange = useCallback((state) => {
     if (__DEV__) {
-      tronlog(state);
       storage.setItem(PERSISTENCE_KEY, state);
     }
   }, []);
@@ -73,9 +78,9 @@ const Routes = () => {
       onStateChange={onStateChange}
     >
       <Stack.Navigator screenOptions={screenOptions}>
-        <Stack.Screen name="Product List" component={ProductList} />
-        <Stack.Screen name="Product" component={Product} />
-        <Stack.Screen name="Basket" component={Basket} />
+        <Stack.Screen name={RouteNames.ProductList} component={ProductList} />
+        <Stack.Screen name={RouteNames.Product} component={Product} />
+        <Stack.Screen name={RouteNames.Basket} component={Basket} />
       </Stack.Navigator>
 
       <AuditLog />
@@ -83,4 +88,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default AppNavigation;
