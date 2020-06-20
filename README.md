@@ -2,7 +2,7 @@
 
 This project is a [React Native](https://facebook.github.io/react-native/) boilerplate that can be used as a base to build your a mobile application (ios and android).
 
-The starter kit provides with the modern tools for developer efficiency and debugging. I have also configured the architecture by observing the common patterns adopted by the react native community.
+The starter kit provides with the modern tools for developer efficiency and debugging. The architecture has been configured observing the common patterns adopted by the react native community.
 
 [comment]: <> ([![NPM Version][npm-image]][npm-url])
 
@@ -12,9 +12,14 @@ The starter kit provides with the modern tools for developer efficiency and debu
 
 ## Getting Started
 
-- [Usage](#installation)
+- [Usage](#usage)
 - [Tools and Libraries](#tools-and-libraries)
-- [Available Scripts](#available-scripts)
+- [State management and Folder structure](#state-management-and-folder-structure)
+- [Path resolver](#path-resolver)
+- [Global Types](#global-types)
+- [Testing](#testing)
+- [Debugging](#debugging)
+- [Linting](#linting)
 - [Release History](#release-history)
 - [Contributing](#contributing)
 - [Author](#author)
