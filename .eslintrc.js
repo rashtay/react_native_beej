@@ -44,4 +44,9 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,
   },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
+  },
 };
