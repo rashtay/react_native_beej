@@ -36,6 +36,7 @@ The starter kit provides with the modern tools for developer efficiency and debu
   - Clone the project - `git clone https://github.com/rashtay/react_native_beej.git <your project name>`. Remove the previous git history: - `rm -rf .git/`.
 - Add the npm dependencies by running - `yarn install`
 - Use [React Native Rename](https://github.com/junedomingo/react-native-rename) to update project name - `$ npx react-native-rename <newName>`
+- Run `npx pod-install`. DO NOT run it before `yarn install`
 - Start the packager with `npm start`to see everything seems to be working fine
 - Remove the LICENSE file and the "License" section from the **README** if your project is not open source
 - Update the existing README.md file with the content related to the app and app development.
