@@ -55,7 +55,7 @@ app.get('*', (req, res) => {
 app.post('*', (req, res) => {
   const { filePath, data } = parseRequest(req);
 
-  const body = JSON.stringify([...data, req.body]);
+  const body = JSON.stringify([...data, req.body], null, 2);
   fs.writeFileSync(filePath, body);
 
   res.json({ result: JSON.parse(body) });
