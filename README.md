@@ -31,9 +31,9 @@ The starter kit provides with the modern tools for developer efficiency and debu
 
 - Install [Node.js](https://nodejs.org/en/). Follow the installation steps for respective operating system from the [official documentation](https://nodejs.org/en/). Make sure you install the **LTS** version of Node.
 - Refer to the [Environment Setup](https://reactnative.dev/docs/environment-setup) doc to set up react native on your system
-- Clone the project - `git clone https://github.com/rashtay/react_native_beej.git <your project name>`
-
-- Remove the previous git history: - `rm -rf .git/`
+- You can download the boilerplate in 2 ways:
+  - Use it as a template by clicking `Use Template` green button which can be found on the top right corner next to the `Clone` dropdown on the repositories GitHub page
+  - Clone the project - `git clone https://github.com/rashtay/react_native_beej.git <your project name>`. Remove the previous git history: - `rm -rf .git/`.
 - Add the npm dependencies by running - `yarn install`
 - Use [React Native Rename](https://github.com/junedomingo/react-native-rename) to update project name - `$ npx react-native-rename <newName>`
 - Start the packager with `npm start`to see everything seems to be working fine
