@@ -46,7 +46,7 @@ const AppNavigation = () => {
 
         if (Platform.OS !== 'web' && initialUrl == null) {
           // Only restore state if there's no deep link and we're not on web
-          const savedStateString = SyncStorage.getItem(PERSISTENCE_KEY);
+          const savedStateString = SyncStorage.get(PERSISTENCE_KEY);
 
           if (savedStateString) {
             setInitialState(savedStateString);
@@ -60,7 +60,7 @@ const AppNavigation = () => {
 
   const onStateChange = useCallback((state) => {
     if (__DEV__) {
-      SyncStorage.setItem(PERSISTENCE_KEY, state);
+      SyncStorage.set(PERSISTENCE_KEY, state);
     }
   }, []);
 
