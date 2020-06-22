@@ -40,9 +40,15 @@ module.exports = {
     'no-use-before-define': [2, { functions: false }],
     'prefer-const': 2,
 
+    'no-param-reassign': [
+      'error',
+      { props: true, ignorePropertyModificationsFor: ['state'] },
+    ],
+
     quotes: ['error', 'single', 'avoid-escape'],
     'import/prefer-default-export': 0,
     'import/no-extraneous-dependencies': 0,
+    'global-require': 0,
   },
   settings: {
     'import/resolver': {

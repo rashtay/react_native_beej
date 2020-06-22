@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
 import React, { useCallback } from 'react';
 import { Platform, Linking } from 'react-native';
-import storage from '@utils/storage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import SyncStorage from 'sync-storage';
 import ProductList from '@containers/ProductList';
 import Product from '@containers/Product';
 import Basket from '@containers/Basket';
@@ -32,43 +32,47 @@ const AppNavigation = () => {
   const [isReady, setIsReady] = React.useState(false);
   const [initialState, setInitialState] = React.useState();
 
-  // We have written this function for persistent routing while we are developing the app
-  const restoreState = useCallback(async () => {
-    // We are persisting the state of screen transition. This helps is coming back to the same page when app reloads
-    // It's experimental and hence we are running in the dev environment
-    if (__DEV__) {
-      try {
+  // Initialize the necessary services that should be configured before app starts
+  const beforeAppStart = useCallback(async () => {
+    try {
+      // To access local storage of the phone, we have to do it asynchronously
+      // We SyncStorage, we can access it asynchronously. We initialize it before we access it
+      await SyncStorage.init();
+
+      // We are persisting the state of screen transition. This helps is coming back to the same page when app reloads
+      // It's experimental and hence we are running in the dev environment
+      if (__DEV__) {
         const initialUrl = await Linking.getInitialURL();
 
         if (Platform.OS !== 'web' && initialUrl == null) {
           // Only restore state if there's no deep link and we're not on web
-          const savedStateString = await storage.getItem(PERSISTENCE_KEY);
+          const savedStateString = SyncStorage.getItem(PERSISTENCE_KEY);
 
           if (savedStateString) {
             setInitialState(savedStateString);
           }
         }
-      } finally {
-        setIsReady(true);
       }
+    } finally {
+      setIsReady(true);
     }
   }, []);
 
   const onStateChange = useCallback((state) => {
     if (__DEV__) {
-      storage.setItem(PERSISTENCE_KEY, state);
+      SyncStorage.setItem(PERSISTENCE_KEY, state);
     }
   }, []);
 
   React.useEffect(() => {
     // Restore navigation state only in development
-    if (__DEV__ && !isReady) {
-      restoreState();
+    if (!isReady) {
+      beforeAppStart();
     }
-  }, [isReady, restoreState]);
+  }, [isReady, beforeAppStart]);
 
   // Do  not render anything until state is ready
-  if (__DEV__ && !isReady) {
+  if (!isReady) {
     return null;
   }
 
