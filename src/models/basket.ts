@@ -2,18 +2,8 @@
  * Sample basket (cart) model for the dummy app
  */
 // https://easy-peasy.now.sh/docs/tutorial/using-computed-properties.html
-import { action, computed, thunk, Action, Thunk, Computed } from 'easy-peasy';
-import { Injections } from '@services/index';
-import { StoreModel } from 'models';
-
-export interface BasketModel {
-  productIds: number[];
-  count: Computed<BasketModel, number>;
-  products: Computed<BasketModel, (Product | undefined)[], StoreModel>;
-  addedProduct: Action<BasketModel, number>;
-  addProduct: Thunk<BasketModel, number, Injections>;
-  removeProduct: Action<BasketModel, number>;
-}
+import { action, computed, thunk } from 'easy-peasy';
+import { BasketModel } from './model-types';
 
 export const basketModel: BasketModel = {
   productIds: [2],

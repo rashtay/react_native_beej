@@ -1,12 +1,8 @@
 /**
  * Sample product model for the dummy app
  */
-import { computed, Computed } from 'easy-peasy';
-
-export interface ProductsModel {
-  items: Product[];
-  getById: Computed<ProductsModel, (id: number) => Product | undefined>;
-}
+import { computed } from 'easy-peasy';
+import { ProductsModel } from './model-types';
 
 export const productsModel: ProductsModel = {
   items: [

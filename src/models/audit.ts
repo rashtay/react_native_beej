@@ -1,10 +1,5 @@
-import { actionOn, ActionOn } from 'easy-peasy';
-import { StoreModel } from 'models';
-
-export interface AuditModel {
-  logs: string[];
-  onAddToBasket: ActionOn<AuditModel, StoreModel>;
-}
+import { actionOn } from 'easy-peasy';
+import { AuditModel } from './model-types';
 
 export const auditModel: AuditModel = {
   logs: [],
