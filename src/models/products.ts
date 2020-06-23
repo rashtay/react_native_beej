@@ -2,7 +2,7 @@
  * Sample product model for the dummy app
  */
 import { computed } from 'easy-peasy';
-import { ProductsModel } from './model-types';
+import { ProductsModel } from 'types/model-types';
 
 export const productsModel: ProductsModel = {
   items: [

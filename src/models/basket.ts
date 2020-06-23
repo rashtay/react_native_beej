@@ -3,7 +3,7 @@
  */
 // https://easy-peasy.now.sh/docs/tutorial/using-computed-properties.html
 import { action, computed, thunk } from 'easy-peasy';
-import { BasketModel } from './model-types';
+import { BasketModel } from 'types/model-types';
 
 export const basketModel: BasketModel = {
   productIds: [2],

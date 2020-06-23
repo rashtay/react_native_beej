@@ -1,5 +1,5 @@
 import { actionOn } from 'easy-peasy';
-import { AuditModel } from './model-types';
+import { AuditModel } from 'types/model-types';
 
 export const auditModel: AuditModel = {
   logs: [],
